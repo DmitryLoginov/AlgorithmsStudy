@@ -2,17 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SortAlgorithmBase<T> where T: IComparable
+public abstract class SortAlgorithmBase<T> where T: IComparable
 {
-    public List<T> collection { get; protected set; }
+    public IList<T> Collection { get; protected set; }
 
-    public SortAlgorithmBase(List<T> collection)
+    public SortAlgorithmBase(IList<T> collection)
     {
-        this.collection = collection;
+        Collection = collection;
     }
 
-    public void Sort()
-    {
-        collection.Sort();
-    }
+    public abstract void Sort();
 }
